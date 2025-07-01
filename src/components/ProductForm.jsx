@@ -23,7 +23,7 @@ const ProductForm = ({ onSubmit, productToEdit, onCancel }) => {
 
     const finalProduct = {
       ...product,
-      price: Number(product.price), // ✅ ensure it's a number
+      price: Number(product.price), 
     };
 
     onSubmit(finalProduct);

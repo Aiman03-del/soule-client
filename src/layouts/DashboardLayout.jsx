@@ -4,11 +4,11 @@ import Footer from "../components/Footer";
 import { Outlet } from "react-router-dom";
 
 const DashboardLayout = ({ children }) => (
-  <div className="min-h-screen bg-gray-50">
+  <div className="min-h-screen bg-gray-50 flex flex-col">
     <Navbar />
-    <div className="flex">
-      <aside className="w-64 bg-white shadow h-[calc(100vh-56px)] p-6">
-        <nav className="flex flex-col gap-4">
+    <div className="flex flex-1 flex-col md:flex-row">
+      <aside className="w-full md:w-64 bg-white p-4 md:p-6 flex-shrink-0">
+        <nav className="flex flex-row md:flex-col gap-4 justify-center md:justify-start">
           <a
             href="/dashboard/products"
             className="font-semibold hover:underline"
@@ -23,11 +23,11 @@ const DashboardLayout = ({ children }) => (
           </a>
         </nav>
       </aside>
-      <div className="flex-1 p-8">
+      <div className="flex-1 p-4 md:p-8">
         <Outlet />
       </div>
-      {/* <main className="flex-1 p-8">{children}</main> */}
     </div>
+    <Footer />
   </div>
 );
 

@@ -13,7 +13,7 @@ import DashboardLayout from "./layouts/DashboardLayout";
 import { Toaster } from "react-hot-toast";
 import MainLayout from "./layouts/MainLayout";
 
-// ProtectedRoute component
+
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem("access_token");
   return token ? children : <Navigate to="/login" replace />;
@@ -58,7 +58,3 @@ function App() {
 }
 
 export default App;
-// <Route
-//                     path="products"
-//                     element={<ProductListPage onEdit={setEditProduct} />}
-//                   />

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-hot-toast";
 
 const BASE_URL = "https://soule-backend-h8dn.onrender.com/products";
 
@@ -11,9 +12,8 @@ const handleTokenError = (error) => {
     error.response &&
     (error.response.status === 401 || error.response.status === 403)
   ) {
-    alert("Please login. Your token is expired.");
+    toast.error("Please login. Your token is expired.", { position: "top-center" });
     localStorage.removeItem("access_token");
-    window.location.href = "/login";
   }
   throw error;
 };

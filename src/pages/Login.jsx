@@ -25,22 +25,21 @@ const Login = () => {
       });
 
       const token = res.data.access_token;
-      localStorage.setItem('access_token', token); // ✅ টোকেন সেভ
-      toast.success('Welcome!', { position: "top-center" }); // ✅ টোস্ট দেখাও
-      navigate('/dashboard'); // ✅ লগইন সফল হলে রিডাইরেক্ট
+      localStorage.setItem('access_token', token);
+      toast.success('Welcome!', { position: "top-center" });
+      navigate('/dashboard');
     } catch (err) {
       console.error(err);
-      toast.error("Login failed! Email or password might be wrong.", { position: "top-center" }); // ✅ এরর টোস্ট
+      toast.error("Login failed! Email or password might be wrong.", { position: "top-center" });
       setError("Login failed! Email or password might be wrong.");
     } finally {
       setLoading(false);
     }
   };
 
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 via-white to-blue-200">
-      <div className="w-full max-w-sm bg-white/80 backdrop-blur-md rounded-2xl shadow-2xl p-8 border border-blue-100">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 via-white to-blue-200 px-2">
+      <div className="w-full max-w-sm bg-white/80 backdrop-blur-md rounded-2xl shadow-2xl p-4 sm:p-8 border border-blue-100">
         <div className="flex flex-col items-center mb-6">
           <div className="bg-blue-600 rounded-full p-3 mb-2 shadow">
             <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
